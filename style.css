@@ -1,0 +1,27 @@
+/*  collor pallette
+--midnight-blue: #191970ff;
+--magic-mint: #8be8cbff;
+--carolina-blue: #1b98e0ff;
+--granite-gray: #646165ff;
+--black-shadows: #ccbcbcff;
+*/
+
+* {
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.title {
+    background-color: #8be8cbff;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.title h1{
+    position: relative;
+}
+
+.list ul li {
+    color: #1b98e0ff;
+}
