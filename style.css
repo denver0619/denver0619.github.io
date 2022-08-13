@@ -1,27 +1,90 @@
 /*  collor pallette
---midnight-blue: #191970ff;
---magic-mint: #8be8cbff;
---carolina-blue: #1b98e0ff;
---granite-gray: #646165ff;
---black-shadows: #ccbcbcff;
+--blue-violet-color-wheel: #540d6eff;
+--paradise-pink: #ee4266ff;
+--sunglow: #ffd23fff;
+--caribbean-green: #3bceacff;
+--go-green: #0ead69ff;
 */
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-* {
-    margin: 0px;
-    margin-bottom: 10px;
-    padding: 0px;
+body,
+html {
+    height: 100%;
+    font-family: 'Open Sans', 'sans-serif';
+    margin: 0;
 }
 
-.title {
-    background-color: #8be8cbff;
-    height: 50px;
-    margin-bottom: 10px;
+body {
+    background: rgb(84, 13, 110);
+    background: -moz-linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
+    background: -webkit-linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
+    background: linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#540d6e", endColorstr="#ffd23f", GradientType=1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.title h1{
-    position: relative;
+aside {
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: auto 40px;
+    padding: .5em;
 }
 
-.list ul li {
-    color: #1b98e0ff;
+aside img {
+    cursor: pointer;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin: 0.3em;
+    font-size: 1.4em;
+}
+
+nav {
+    background: #ffffff;
+}
+
+nav ul.visible {
+    position: absolute;
+    display: block;
+    background: #ffffff;
+    width: 45%;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+nav ul {
+    display:none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul.visible li a {
+    text-decoration: none;
+    font-size: 1em;
+    color: #000000;
+    display: block;
+    padding: 1em;
+    font-weight: 500;
+}
+
+nav ul.visible .nav-close {
+    width: 40px;
+}
+
+main {
+    background: #ffffff;
+    height: 100%;
+    padding: 1em 1.3em
+}
+
+h1 {
+    margin: 0;
 }
