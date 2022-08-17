@@ -1,199 +1,117 @@
-/*  collor pallette
---blue-violet-color-wheel: #540d6eff;
---paradise-pink: #ee4266ff;
---sunglow: #ffd23fff;
---caribbean-green: #3bceacff;
---go-green: #0ead69ff;
+/* CSS HEX
+--smoky-black: #121212ff;
+--baby-powder: #fdfffcff;
+--electric-blue: #83eeffff;
+--teal-blue: #077187ff;
+--liberty: #53599aff;
 */
-/*font import*/
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* new
+--smoky-black: #121212ff;
+--baby-powder: #fdfffcff;
+--maximum-blue-purple: #a09be7ff;
+--mahogany: #c44900ff;
+--russian-green: #6e9075ff;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 1px solid red;
+}
 
 html,
 body {
     height: 100vh;
-    font-family: 'Open Sans', 'sans-serif';
-    margin: 0;
+    font-family: Poppins, sans-serif;
 }
 
 body {
-    background: rgb(84, 13, 110);
-    background: -moz-linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
-    background: -webkit-linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
-    background: linear-gradient(75deg, rgba(84, 13, 110, 1) 0%, rgba(255, 210, 63, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#540d6e", endColorstr="#ffd23f", GradientType=1);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #121212;
+    color: #fdfffcff;
 }
 
-aside {
-    color: #ffffff;
-    display: grid;
-    grid-template-columns: 40px auto;
-    padding: .5em;
-}
-
-aside img {
-    cursor: pointer;
-}
-
-figure {
-    margin: 0;
-}
-
-figcaption {
-    margin: 0.3em;
-    font-size: 1.4em;
+header {
+    height: 100px;
+    display: flex;
+    justify-content: end;
 }
 
 nav {
-    background: #ffffff;
-}
-
-nav ul.visible {
-    position: absolute;
-    display: block;
-    background: lightgray;
-    width: 45%;
-    left: 0;
-    top: 0;
-    height: max-content;
+    margin-right: 20px;
 }
 
 nav ul {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
 }
 
-nav ul.visible li a {
+nav ul li {
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+nav ul li a {
     text-decoration: none;
-    font-size: 1em;
-    color: #000000;
-    display: block;
-    padding: 1em;
-    font-weight: 500;
-}
-
-nav ul.visible .nav-close {
-    width: 40px;
-}
-
-main {
-    background: #ffffff;
+    color: #fdfffcff;
     height: 100%;
-    padding: 1em 1.3em
+    width: 100%;
+    font-size: 20pt;
+    font-weight: 300;
+    transition: all 0.25s ease-in-out;
 }
 
-h1 {
-    margin: 0;
+nav ul li:first-child a{
+    color: 	#83EEFF;
 }
 
-button {
+nav ul li a:hover {
+    color:#077187ff;
+}
+
+section:nth-child(1) {
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section:nth-child(1) div {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+section div#landing h1 {
+    font-size: 30pt;
+}
+
+section div#landing p {
+    font-size: 15pt;
+    font-weight: 200;
+    margin-top: 2vh;
+}
+section div#landing button {
+    margin-top: 2vh;
+    background: #53599aff;
+    color: #fff;
     border: none;
-    background: none;
-    font-size: 14pt;
-    background-color: lightgray;
-    padding: 1vh 5vh;
+    height: 50px;
+    width: 200px;
+    font-size: 15pt;
+    font-weight: 300;
     border-radius: 10px;
 }
 
-@media (min-width: 768px) {
-
-    /* remove mobile buttons */
-
-    aside img {
-        display: none;
-    }
-
-    nav ul li#close {
-        display: none;
-    }
-
-    /* desktop design */
-    html {
-        height: 81.125vh;
-    }
-
-    body {
-        display: grid;
-        grid-template-columns: 20% auto;
-        height: 100vh;
-    }
-
-    aside {
-        background-color: gray;
-        display: block;
-        height: auto;
-        padding: 0;
-    }
-
-    figure {
-        display: block;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-    }
-
-    figcaption {
-        text-align: center;
-    }
-
-    aside div#avatar {
-        display: block;
-        background-color: #000000;
-        height: 150px;
-        width: 150px;
-        border-radius: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    nav {
-        background-color: lightgray;
-    }
-
-    nav ul {
-        display: inline-block;
-        border-radius: 0;
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        text-decoration: none;
-        background-color: white;
-        color: #000000;
-        padding: 5% 10%;
-        font-size: 15pt;
-        font-weight: 400;
-    }
-
-    nav ul li a:hover {
-        background-color: #ee4266ff;
-        color: white;
-    }
-
-    main {
-        height: auto;
-        margin: 2vh;
-        border-radius: 10px;
-        padding: 10% 20%;
-    }
-
-    button {
-        border: none;
-        background: none;
-        font-size: 15pt;
-        font-weight:bold;
-        background-color: gray;
-        padding: 2vh 5vh;
-        border-radius: 10px;
-    }
-
-    button:hover {
-        background-color: #ee4266ff;
-        color: white;
-    }
+section div#landing button:hover {
+    background: #83eeffff;
+    color: #077187ff;
 }
