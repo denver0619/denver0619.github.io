@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 html,
@@ -45,7 +45,7 @@ nav {
 }
 
 nav ul {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     list-style: none;
 }
@@ -114,4 +114,90 @@ section div#landing button {
 section div#landing button:hover {
     background: #83eeffff;
     color: #077187ff;
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    header {
+        flex-direction: column;
+        align-items:flex-end;
+        height: auto;
+    }
+
+    div#menu {
+        height: 50px;
+        width: 50px;
+        position:relative;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        margin-right: 10px;
+        transition: all .5s ease-in-out;
+    }
+    .menu-burger {
+        height: 3px;
+        width: 50px;
+        border-radius: 10px;
+        background-color: #83eeffff;
+        transition: all .5s ease-in-out;
+    }
+
+    .menu-burger::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 3px;
+        width: 25px;
+        border-radius: 10px;
+        background-color: #83eeffff;
+        transition: all .5s ease-in-out;
+    }
+
+    .menu-burger::after {
+        transform: translateY(15px);
+    }
+
+    div.open .menu-burger{
+        transform: rotate(45deg);
+    }
+
+    div.open .menu-burger::after{
+        transform: rotate(-90deg) translate(-2.125px, -2.125px);
+        width: 50px;
+    }
+
+
+    nav {
+        visibility: hidden;
+    }
+
+    nav ul {
+        flex-direction: column !important;
+    }
+
+    nav ul .navigation {
+        opacity: 0;
+        transform: rotate(45deg) translate(0px, -75px);
+        transition: all 1s ease-in-out;
+    }
+
+    nav.active {
+        visibility: visible;
+    }
+
+    nav.active ul .navigation {
+        opacity: 1;
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+
+    section::nth-child(1) {
+        width: auto;
+    }
+
+    section::nth-child(1) div {
+        position: relative !important;
+    }
+
 }

@@ -1,10 +1,15 @@
-var navigationOpen = document.querySelector('.nav-open');
-var navigationClose = document.querySelector('.nav-close');
-var navigationList = document.querySelector('#nav-list');
+var menuBtn = document.querySelector('#menu');
+var navBar = document.querySelector('nav');
+let isOpen = false;
 
-function toggleMenu() {
-    navigationList.classList.toggle('visible');
-};
-
-navigationOpen.addEventListener('click', toggleMenu);
-navigationClose.addEventListener('click', toggleMenu)
+menuBtn.addEventListener('click', () => {
+    if(!isOpen) {
+        menuBtn.classList.add('open');
+        navBar.classList.add('active');
+        isOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        navBar.classList.remove('active');
+        isOpen = false;
+    }
+});
