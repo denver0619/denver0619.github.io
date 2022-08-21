@@ -17,3 +17,5 @@ menuBtn.addEventListener('click', () => {
         isOpen = false;
     }
 });
+
+

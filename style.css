@@ -38,9 +38,12 @@ header {
 
 /* --------------- hamburger icon (start)--------------- */
 div#menu {
+    /* outline:1px solid purple; */
+    z-index: 1;
     height: 50px;
     width: 100%;
-    position: relative;
+    background-color: #121212f0;
+    position: absolute;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -83,11 +86,12 @@ div.open .menu-burger::after {
 
 /* ---------------navigation animation (start)--------------- */
 nav {
-    z-index: 1000;
-    position: absolute;
+    /* outline: 1px solid red; */
+    z-index: 1;
+    position: fixed;
     width: 100%;
-    padding: 10px 50px;
-    top: 50px;
+    padding: 10px 0px;
+    transform: translate(0px, 50px);
     background-color: #121212f0;
     opacity: 0;
     visibility: hidden;
@@ -95,11 +99,25 @@ nav {
 }
 
 nav ul {
+    /* outline: 1px solid yellow; */
+    width: 100%;
     list-style: none;
     flex-direction: column;
 }
 
+nav ul li {
+    /* outline: 1px solid green; */
+    width: 100%;
+    opacity: 0;
+    transform: translate(0px, 75px);
+    transition: all .5s ease-in-out;
+}
+
 nav ul li a {
+    display:block;
+    /* outline: 1px solid blue; */
+    width: 100%;
+    padding: 0px 50px;
     text-decoration: none;
     text-transform: uppercase;
     color: #fdfffcff;
@@ -107,13 +125,6 @@ nav ul li a {
     width: 100%;
     font-size: 20pt;
     font-weight: 300;
-}
-
-nav ul li {
-    width: 100%;
-    opacity: 0;
-    transform: translate(0px, 75px);
-    transition: all .5s ease-in-out;
 }
 
 nav ul li:first-child a {
@@ -173,8 +184,8 @@ p {
     height: 50px;
     width: 200px;
     border-radius: 5px;
-    background-color: #077187ff;
-    color:#fdfffcff;
+    background-color: #83EEFF;
+    color:#121212;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
@@ -183,6 +194,8 @@ p {
 @media screen and (min-width: 768px) {
     header {
         flex-direction: row;
+        justify-content: end;
+        margin-right: 0;
     }
     #menu {
         all: unset;
@@ -196,6 +209,8 @@ p {
 
     nav {
         all: unset;
+        z-index: 2;
+        height: 100%;
     }
 
     nav ul {
@@ -206,13 +221,14 @@ p {
     }
 
     nav ul li {
-        margin: 0px 5px;
+        margin: 0px 10px;
         opacity: 1;
         transform: translate(0px, 0px);
     }
 
     nav ul li a {
-        font-size: 30px;
+        font-size: 20px;
+        padding: 0px;
         white-space: nowrap;
     }
 
@@ -223,9 +239,12 @@ p {
     p {
         font-size: 20px;
     }
+    #landing {
+        width: 50%;
+    }
 
     #landing button:hover {
-        background-color: #53599aff;
-        color:#83EEFF;
+        background-color: #077187ff;
+        color:#fdfffcff;
     }
 }
