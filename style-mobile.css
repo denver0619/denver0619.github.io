@@ -199,6 +199,7 @@ h1 {
 }
 
 p {
+    color: #fdfffcff;
     font-size: 15px;
     font-weight: 200;
     text-align: justify;
@@ -230,5 +231,63 @@ p {
 
 /* ---------------section 1 animation (end)--------------- */
 
+/* =============== section 2 start =============== */
 
+section#picture {
+    display: flex;
+}
+
+section#picture div {
+    margin: 0px 10vw;
+}
+
+
+
+
+
+/* ---------------section 2 animation (start)--------------- */
+
+
+
+
+/* ---------------section 2 animation (end)--------------- */
+
+/* =============== section 3 start =============== */
 /* ---------------section animation ()--------------- */
+
+
+/* =============== section 4 start =============== */
+
+section#contacts ul {
+    list-style: none;
+}
+
+#contacts li {
+    font-weight: 400;
+}
+
+
+
+/* ---------------section animation (start)--------------- */
+/* ---------------section animation (end)--------------- */
+
+/* =============== section 5 start =============== */
+section#resume {
+    display: inline-flex;
+}
+
+section#resume div {
+    width: 200px;
+}
+
+section#resume button {
+    height: 50px;
+    width: 100%;
+    font-size: 20pt;
+    border: none;
+    border-radius: 5px;
+    background-color: #83EEFF;
+}
+
+/* ---------------section animation (start)--------------- */
+/* ---------------section animation (end)--------------- */
