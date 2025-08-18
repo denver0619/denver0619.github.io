@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface NavigationContent {
   name: string;
   href: string;
@@ -17,12 +19,27 @@ function classNames(...classes: string[]) {
 }
 
 const MainNavigation = () => {
+  const [navItems, setNavItems] = useState<NavigationContent[]>(navigation);
+
+  const handleClick = (href: string) => {
+    // Update current
+    setNavItems((prev) =>
+      prev.map((nav) => ({ ...nav, current: nav.href === href }))
+    );
+
+    // Smooth scroll
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div className="navigation-wrapper">
         <div className="navigation-container">
           <nav>
-            {navigation.map((item: NavigationContent) => (
+            {navItems.map((item: NavigationContent) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -33,6 +50,10 @@ const MainNavigation = () => {
                     : "navigation-item-inactive",
                   "navigation-item"
                 )}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleClick(item.href);
+                }}
               >
                 {item.name}
               </a>

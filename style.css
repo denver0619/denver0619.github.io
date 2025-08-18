@@ -89,7 +89,7 @@
   }
 
   .navigation-item-active {
-    @apply bg-button-bg-primary text-button-text-primary hover:bg-button-hover-primary;
+    @apply bg-button-bg-primary text-button-text-primary;
   }
 
   .navigation-item-inactive {
