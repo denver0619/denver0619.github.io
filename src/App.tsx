@@ -3,6 +3,10 @@ import "./components/ui/navigation/MainNavigation";
 import MainNavigation from "./components/ui/navigation/MainNavigation";
 import SectionHero from "./components/reusable/Section";
 import { BackgroundBeams } from "./components/ui/backgrounds/BackgroundBeams";
+import CardSkills from "./components/ui/cards/CardSkills";
+import CardAboutMe from "./components/ui/cards/CardAboutMe";
+import CardContacts from "./components/ui/cards/CardContacts";
+import CardProjects from "./components/ui/cards/CardProjects";
 
 function App() {
   return (
@@ -14,16 +18,16 @@ function App() {
         <CardHero></CardHero>
       </SectionHero>
       <SectionHero idName="skills">
-        <CardHero></CardHero>
+        <CardSkills></CardSkills>
       </SectionHero>
       <SectionHero idName="projects">
-        <CardHero></CardHero>
+        <CardProjects></CardProjects>
       </SectionHero>
       <SectionHero idName="about-me">
-        <CardHero></CardHero>
+        <CardAboutMe></CardAboutMe>
       </SectionHero>
       <SectionHero idName="contacts">
-        <CardHero></CardHero>
+        <CardContacts></CardContacts>
       </SectionHero>
     </>
   );

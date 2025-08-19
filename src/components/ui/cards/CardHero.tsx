@@ -1,10 +1,7 @@
-// import "./../../../style.css";
-// import "./CardHero.css";
-
 const CardHero = () => {
   return (
     <>
-      <div className="card-hero">
+      <div className="main-card">
         <h5>
           “Building Mobile Apps for Everyday Users — Aspiring Software Engineer”
         </h5>
@@ -14,8 +11,24 @@ const CardHero = () => {
           versatile solutions.
         </h6>
         <div className="container-buttons">
-          <button type="button">View Projects</button>
-          <button type="button">Contact Me</button>
+          <button
+            type="button"
+            onClick={() => {
+              const project = document.getElementById("projects");
+              project?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            View Projects
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              const project = document.getElementById("contacts");
+              project?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Contact Me
+          </button>
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NavigationContent {
   name: string;
@@ -21,18 +21,60 @@ function classNames(...classes: string[]) {
 const MainNavigation = () => {
   const [navItems, setNavItems] = useState<NavigationContent[]>(navigation);
 
-  const handleClick = (href: string) => {
-    // Update current
-    setNavItems((prev) =>
-      prev.map((nav) => ({ ...nav, current: nav.href === href }))
+  // const handleClick = (href: string) => {
+  //   // Update current
+  //   setNavItems((prev) =>
+  //     prev.map((nav) => ({ ...nav, current: nav.href === href }))
+  //   );
+
+  //   // Smooth scroll
+  //   const target = document.querySelector(href);
+  //   if (target) {
+  //     target.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+  // scroll spy setup
+  useEffect(() => {
+    // target inner anchors/headings instead of entire <section>
+    const targets = document.querySelectorAll("section[id] > div");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let closest: { id: string; offset: number } | null = null;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const rect = entry.boundingClientRect;
+            const id = (entry.target.parentElement as HTMLElement).id; // section id
+            const offset = Math.abs(rect.top);
+
+            if (!closest || offset < closest.offset) {
+              closest = { id, offset };
+            }
+          }
+        });
+
+        if (closest) {
+          const id = `#${(closest as { id: string; offset: number }).id}`;
+          setNavItems((prev) =>
+            prev.map((nav) => ({ ...nav, current: nav.href === id }))
+          );
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -60% 0px", // trigger when heading is ~40% down screen
+        threshold: 0,
+      }
     );
 
-    // Smooth scroll
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    targets.forEach((t) => observer.observe(t));
+
+    return () => {
+      targets.forEach((t) => observer.unobserve(t));
+    };
+  }, []);
 
   return (
     <>
@@ -50,10 +92,6 @@ const MainNavigation = () => {
                     : "navigation-item-inactive",
                   "navigation-item"
                 )}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(item.href);
-                }}
               >
                 {item.name}
               </a>
