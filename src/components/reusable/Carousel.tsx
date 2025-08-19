@@ -1,9 +1,11 @@
 import { useState, type ReactNode } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import IconText from "./IconText";
+import { VscGithubInverted } from "react-icons/vsc";
 
 interface Slide {
   imagePath: string;
-  header: string;
+  role: string;
   body: string;
   link: string;
   tools: ReactNode[];
@@ -48,6 +50,13 @@ const Carousel = ({ slides }: CarouselProps) => {
                     </div>
                   ))}
                 </div>
+                <button
+                  onClick={() =>
+                    window.open(slide.link, "_blank", "noopener,noreferrer")
+                  }
+                >
+                  <IconText icon={<VscGithubInverted />}>Source Code</IconText>
+                </button>
               </div>
             </div>
           ))}
