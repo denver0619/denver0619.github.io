@@ -157,7 +157,7 @@
   }
 
   .content-tool-item {
-    @apply backdrop-blur-2xl rounded-full py-1.5 pl-1 pr-4;
+    @apply backdrop-blur-2xl rounded-full py-1 pl-1 pr-4;
   }
 
   .carousel-button-container {
