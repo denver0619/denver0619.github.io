@@ -1,4 +1,4 @@
-import profile_picture from "../../../assets/profile/profile_picture.jpg";
+import profile_picture from "../../../assets/profile/profile.jpg";
 
 const CardAboutMe = () => {
   return (
