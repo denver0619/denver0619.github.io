@@ -1,3 +1,5 @@
+import resume from "../../../assets/resume/laurian_john_denver-cv.pdf";
+
 const CardContacts = () => {
   return (
     <>
@@ -35,7 +37,17 @@ const CardContacts = () => {
             </p>
           </div>
           <div className="card-item button">
-            <button className="resume">Download Resume</button>
+            <button
+              className="resume"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = resume;
+                link.download = "JohnDenverLaurian-CV.pdf";
+                link.click();
+              }}
+            >
+              Download Resume
+            </button>
           </div>
         </div>
       </div>
