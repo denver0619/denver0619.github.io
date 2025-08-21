@@ -42,7 +42,7 @@ const CardContacts = () => {
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = resume;
-                link.download = "JohnDenverLaurian-CV.pdf";
+                link.download = "JohnDenverLaurian.pdf";
                 link.click();
               }}
             >
