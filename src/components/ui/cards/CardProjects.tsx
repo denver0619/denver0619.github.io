@@ -23,6 +23,7 @@ const CardProjects = () => {
     {
       imagePath: workwellandroid,
       role: "",
+      title: "WorkWell",
       body: "An Android mobile app that enhances posture for sedentary users by providing real-time feedback using a CNN-based MediaPipe Pose Landmark Detection algorithm. I implemented posture detection, guided routine interfaces, and session tracking, helping users maintain proper form and review performance history.",
       link: "https://github.com/denver0619/workwell",
       tools: [
@@ -36,6 +37,7 @@ const CardProjects = () => {
     {
       imagePath: gabay,
       role: "",
+      title: "Gabay",
       body: "A mobile app that helps Filipino domestic travelers track and manage travel expenses and budgets efficiently. I designed the user interface and implemented features for logging, categorizing, and tracking individual trip expenditures to promote financial awareness and adherence to budgets.",
       link: "https://github.com/denver0619/gabay",
       tools: [
@@ -50,6 +52,7 @@ const CardProjects = () => {
     {
       imagePath: amiscosa,
       role: "",
+      title: "AMISCOSA",
       body: "A hardware sales and inventory management system designed to streamline operations, improve inventory accuracy, and enhance customer service for Amiscosa Hardware. I implemented modules for inventory tracking, transactions, customer management, and report generation, enabling real-time stock updates, low-stock alerts, and efficient checkout processes.",
       link: "https://github.com/denver0619/amiscosa-hardware-and-sales-inventory-system",
       tools: [
@@ -62,6 +65,7 @@ const CardProjects = () => {
     {
       imagePath: ticketflare,
       role: "",
+      title: "TicketFlare",
       body: "An event management system for BPSU that streamlines event registration, enhances communication, and reduces long queues using a centralized digital platform. I developed the registration and check-in modules, implemented information dissemination features, and ensured efficient event tracking for organizers and attendees.",
       link: "https://github.com/denver0619/event-management-system",
       tools: [

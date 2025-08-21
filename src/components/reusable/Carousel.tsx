@@ -6,6 +6,7 @@ import { VscGithubInverted } from "react-icons/vsc";
 interface Slide {
   imagePath: string;
   role: string;
+  title: string;
   body: string;
   link: string;
   tools: ReactNode[];
@@ -41,7 +42,7 @@ const Carousel = ({ slides }: CarouselProps) => {
             <div className="carousel-content-container" key={index}>
               <img src={slide.imagePath} alt="" />
               <div className="content-description-container">
-                <h6>Description</h6>
+                <h6>{slide.title}</h6>
                 <p>{slide.body}</p>
                 <div className="content-tools-container">
                   {slide.tools.map((tool, index) => (
